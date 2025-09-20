@@ -19,6 +19,14 @@
                 color:pink;
                 font-size:20px;
             }
+            /*class 속성 셀렉터*/
+            .point{
+                color:orange;
+                font-weight:bold; /*bold는 굴게 해주는것 font-weight은 보통 숫자로 설정 가능*/
+            }
+            a{
+                text-decoration:none; /*a 태그는 보통 underline이 기본값으로 설정되어 있음.*/
+            }
         </style>
     </head>
     <body>
@@ -26,10 +34,11 @@
         <h3>예제 1</h3>
 
         <!--태그적인 기능을 적용해야되는데 태그가 없을시 span 태그를 사용하여 감싼다.-->
+
         <p>
             <span id = "title">CSS는 스타일 시트</span> 라고 불립니다.<br>
             HTML 태그를 꾸미는 역할을 합니다. <br>
-            정해진 속성과 값을 통해 스타일을 부여할 수 있습니다. 
+            정해진 <span class = "point">속성</span>과 <span class = "point">값</span>을 통해 스타일을 부여할 수 있습니다. 
         </p>
 
         <!--
