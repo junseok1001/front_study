@@ -1,0 +1,38 @@
+
+.month{
+    font-weight:bold;
+    font-size:20px;
+}
+
+.holiday{
+    color:red;
+}
+
+.today{
+    background-color: #f4f5bcdc;
+    font-weight:bold;
+}
+
+.calendar, .calendar th, .calendar td{
+    border : 1px solid black; /*외곽선*/
+    border-collapse:collapse;
+    padding:5px;
+}
+
+.calendar{
+    width:1200px;
+    height:500px;
+    table-layout: fixed;
+}
+
+.calendar > tbody {
+    vertical-align: top;
+}
+
+.calendar td:hover{
+    background-color: #02f7ff;
+}
+
+/* .calendar th{
+    width:150px;
+} */

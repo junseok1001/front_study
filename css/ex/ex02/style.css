@@ -1,0 +1,33 @@
+
+.password-input{
+    width:250px;
+    height:30px;
+}
+
+.id-input{
+    width:250px;
+    font-size:30px;
+}
+
+.book-table{
+    width: 300px;
+    height: 200px;
+    text-align:center;
+}
+
+/*해당 클래스를 가지는 것의 태그를 지칭하는것*/
+/* > : 바로 하위 요소만 지칭 가능*/
+.book-table > thead{
+    background-color:#cfe4f8;
+}
+
+/*book-table 아래 tr 이 있으면 무조건 적용
+.book-table  tr{
+    background-color: #c2ffbc;
+}
+*/
+
+/*hover 속성은 마우스를 올렸을때만 적용 해주는것*/
+.book-table > tbody > tr:hover{
+    background-color : #c9fcc8;
+}
