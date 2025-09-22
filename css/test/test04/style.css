@@ -1,0 +1,45 @@
+.price-list, .price-list th, .price-list td{
+        border : 3px solid #ffffff;
+        border-collapse: collapse;
+}
+
+.price-list{
+    width : 800px;
+    height : 150px;
+    table-layout: fixed;
+}
+
+
+.price-list > tbody {
+    text-align: center;
+    font-weight: 550;
+}
+
+.total{
+    text-align: right;
+}
+
+
+.price-list > thead{
+    background-color: aqua;
+}
+
+.save{
+    width:850px;
+    height: 35px;
+}
+
+.input-data{
+    width: 150px;
+    height: 35px;
+}
+
+.sum-source{
+    background-color: #51cbf0;
+}
+
+h3{
+    font-size:30px;
+}
+
+
