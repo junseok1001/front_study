@@ -1,42 +1,31 @@
-<!DOCTYPE html>
+<!Doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>css1 연습</title>
-        <style>
-            #headDate{
-                color:darksalmon;
-                font-size :10px;
-            }
-            #firstContent{
-                font-weight:bold;
-            }
-            #first_img_source{
-                color:lightslategray;
-                font-size:15px;
-            }
-
-        </style>
+        <title>
+            기본 HTML 태그1
+        </title>
     </head>
     <body>
-        <h3>[속보] 오늘 아침 해가 떳다.</h3>
+        <h1>일기</h1>
+        <hr>
         <p>
-            <span id = "headDate">기사 전송 : 2020-03-12 14:25</span>
+            <b>날짜</b> : 2020/ 03 /23 <br>
+            <b>날씨</b> : 맑음 
         </p>
         <hr>
-        <p id = "firstContent">
-            "해가 떠서 너무 놀라웠다."<br>
-            "어제도 떳는데 오늘도 뜰줄은 몰랐다." <br>
-            "달이 지고 해가 떳다"
+
+        <p>
+            오늘은 운이 좋았다. <br>
+            길가다가 500원을 주웠다. 이걸 뭘 사먹지?
         </p>
 
-        <img alt = "새해 밝는 모습"  width = "500" src = "data:image/jpeg;base64,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">
-        <br><span id = "first_img_source">오늘 아침 해가 떠오르고 있다.[사진 출처 : 인터넷]</span>
         <p>
-            OOO기자 = 오늘 아침 해가 떠서 논란이 되고있다. 어제밤까지만 해도 있던 달이 지고 해가 떳다.<br>
-            일각에서는 해가 압력을 동원해서 달을 지게 한게 아닌지 의구심을 갖고 있다고한다.<br>
-            이에 따라 당국에서는 불법성은 없는지 철저히 조사할것 이라고 밝혔다. 
+            <h4>오늘의 한마디</h4>
+
+            <pre>
+     동정할거면 돈으로 줘라
+            </pre>
         </p>
-        OOO@begopa.gopa
+
     </body>
 </html>
