@@ -1,0 +1,46 @@
+#wrap{
+    width:1200px;
+    margin: 0 auto;
+}
+
+header{
+    width:1200px;
+    height:100px;
+    background-color:purple;
+}
+
+/* 블록속성 태그의 특징
+너비는 상위로 가지고있는것을 전체 채운다(만약 선언이 안됐을경우에만) */
+.main-menu{
+    height:50px;
+    background-color: brown;
+}
+
+.contents > .main-contents{
+    width:900px;
+}
+
+.main-contents > .contents1{
+    height:250px;
+    background-color:coral;
+}
+
+.main-contents > .contents2{
+    height:250px;
+    background-color: sienna;
+}
+
+.contents > .sub-contents{
+    width:300px;
+    height:500px;
+    background-color: rgb(116, 136, 2);
+}
+
+footer{
+    height:100px;
+    background-color: darkgrey;
+}
+
+.display-flex{
+    display:flex;
+}

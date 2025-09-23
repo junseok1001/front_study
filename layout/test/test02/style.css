@@ -1,0 +1,32 @@
+#wrap{
+    width:1200px;
+    margin-right:auto;
+}
+
+#title{
+    height:100px;
+}
+
+#title > .logo{
+    width:200px;
+    background-color:chocolate;
+}
+
+#title > .search{
+    width:1000px;
+    background-color: blueviolet;
+}
+
+.main-contents{
+    height:500px;
+    background-color: brown;
+}
+
+.link-line{
+    height:80px;
+    background-color: cornflowerblue;
+}
+
+.display-flex{
+    display: flex;
+}

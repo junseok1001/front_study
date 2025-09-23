@@ -1,6 +1,6 @@
 .box-size{
     width:200px;
-    height:150px;
+    height:100px;
 }
 
 .box1{
@@ -9,4 +9,28 @@
 
 .box2{
     background-color: blue;
+}
+
+.display-flex{
+    display:flex;
+}
+
+.box-margin{
+    /* margin:20px; */
+    margin-bottom: 10px;
+}
+
+.box-padding{
+    /* padding:20px; */
+    padding:0px 20px;
+}
+
+
+/* display-flex가 적용이 안되어 있다면 적용이 안됌. */
+.box-align{
+    /* flex-start , center , end 왼쪽, 가운데 오른쪽 순이다. */
+    /* space-between, space-around, space-evenly */
+    /* 태그들 사이의 공간 동일, 태그 외부가 동일해주는것 , 태그들 사이에 공간을 모두가 동일한거  */
+    /* div 태그 공간 안에서 태그들의 사이의 공간을 일정하게 해주는것 */
+    justify-content:space-evenly;
 }
