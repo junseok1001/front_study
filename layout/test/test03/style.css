@@ -8,11 +8,6 @@ header{
 }
 
 
-.main-contents{
-    height:600px;
-    
-}
-
 .main-contents > .main-left-contents{
     width:1000px;
     height:600px;
@@ -27,7 +22,6 @@ header{
 
 .sub-contents{
     height: 100px;
-    background-color:aquamarine;
 }
 
 .sub-contents > .sub-left-contents{
