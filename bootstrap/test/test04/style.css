@@ -1,0 +1,48 @@
+#wrap{
+    width:1600px;
+    margin: 0 auto;
+}
+
+
+header > .main-logo{
+    height:100px
+}
+
+header > .menu{
+    height:100px
+}
+
+
+
+
+.contents > .banner{
+    height:700px;
+    overflow:hidden;
+}
+
+.contents > .main-contents{
+    height:700px;
+}
+
+
+
+
+
+footer > .logo{
+    height:100px;
+}
+
+footer > .copyright{
+    height:100px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+footer > .contact{
+    height:100px;
+}
+
+
+
+
+
