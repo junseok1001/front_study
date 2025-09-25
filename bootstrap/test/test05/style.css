@@ -1,4 +1,39 @@
 #wrap{
     width:1200px;
-    height:900px;
+    margin: 0 auto;
+}
+
+header{
+    height:100px;
+    background-color: darkgrey;
+}
+
+header > .search{
+    height:100px;
+    width:400px;
+}
+
+header > .title{
+    height:100px;
+    width:400px;
+}
+
+header > .login{
+    height:100px;
+    width:400px;
+}
+
+.menu{
+    height:80px;
+    background-color: darkviolet;
+}
+
+.contents{
+    height:600px;
+    background-color:darkgreen;
+}
+
+.copyright{
+    height:100px;
+    background-color: yellow;
 }
