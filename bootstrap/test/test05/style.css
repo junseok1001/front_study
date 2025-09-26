@@ -5,7 +5,6 @@
 
 header{
     height:100px;
-    background-color: darkgrey;
 }
 
 header > .search{
@@ -23,17 +22,46 @@ header > .login{
     width:400px;
 }
 
-.menu{
-    height:80px;
-    background-color: darkviolet;
+.subject > .logo{
+    font-size:50px;
 }
 
-.contents{
-    height:600px;
-    background-color:darkgreen;
+.menu{
+    height:50px;
+    background-color: lightgray;
+    font-size:25px;
+}
+
+
+
+.contents > .banner{
+    height:300px;
+    overflow:hidden;
+}
+
+
+.main-contents > .best-seller{
+    height:50px;
+}
+
+.main-contents > .category{
+    height:250px;
+}
+
+.category > .img{
+    height:200px;
+}
+
+.category > .contact{
+    height:50px;
+}
+
+.contact > div{
+    font-size:15px;
 }
 
 .copyright{
     height:100px;
-    background-color: yellow;
+    color:gray;
+    font-size:10px;
 }

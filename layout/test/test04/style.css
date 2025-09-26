@@ -3,31 +3,34 @@
      margin: 0 auto;
 }
 
+.title{
+    height:100px;
+}
 
 .title > .logo{
     width:200px;
-    height:100px;
     background-color: rgb(211,105,30);
 }
 
 .title > .menu{
     width:1000px;
-    height:100px;
     background-color: rgb(100,149,236);
 }
 
 
+.main-contents{
+    height:500px;
+}
 
 .main-contents > .contents1{
     width:600px;
-    height:500px;
     background-color:yellow;
 }
 
 .main-contents > .sub-contents{
     width:600px;
-    height:500px;
 }
+
 
 .sub-contents > .article1{
     height:250px;
@@ -40,22 +43,22 @@
 }
 
 
+.link-line{
+    height:100px;
+}
 
 .link-line > .footer-logo1{
     width:200px;
-    height:100px;
     background-color:rgb(255,159,122);
 }
 
 .link-line > .copyright{
     width:800px;
-    height:100px;
     background-color:rgb(143,238,143);
 }
 
 .link-line > .footer-logo2{
     width:200px;
-    height:100px;
     background-color:rgb(255,159,122);
 }
 
