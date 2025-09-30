@@ -1,0 +1,19 @@
+.space{
+    width:800px;
+    
+    font-size:13px;
+    background-color:aqua;
+}
+
+
+.box{
+    width:100px;
+    height:100px;
+    background-color:cadetblue;
+}
+
+.box2{
+    width:500px;
+    height:500px;
+    background-color:dodgerblue;
+}

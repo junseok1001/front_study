@@ -9,25 +9,34 @@
     </head>
     <body>
         <h2>1. 비밀번호 일치</h2>
-        <label>비밀번호 : </label><input type="text" id="main-password">
-        <label>비밀번호 확인 : </label><input type="text" id="confirm-password">
+        <label>비밀번호 : </label><input type="password" id="main-password" >
+        <label>비밀번호 확인 : </label><input type="password" id="confirm-password">
         <button type="button" id="confirmBtn">확인</button>
 
         <hr>
 
         <h2>2.금칙어</h2>
-        <input type="text">
-        <button type="button">검색</button>
+        <input type="text" id="searchInput">
+        <button type="button" id="searchBtn">검색</button>
+
+        
 
         <h2>3. 펼치기</h2>
-        <div></div>
-        <button type="button">펼치기</button>
+        <div class="space" id="space">
+            <어린왕자 좋아하는 글귀> <br>
+            내가 좋아하는 사람이 나를 좋아해 주는 건 기적이야. <br>
+            너의 장미꽃이 그토록 소중한 것은 그 꽃을 위해 네가 공들인 그 시간 때문이야. <br>
+            다른 사람을 판단하는 것보다 자신을 판단하는 것이 훨씬 더 어렵습니다. 
+            만약 여러분이 자신을 올바르게 판단하는데 성공한다면,
+            여러분은 진정한 지혜를 가진 사람입니다.
+        </div>
+        <button type="button" id="spread">닫기</button>
 
         <hr>
 
         <h2>4.사각형 바꾸기</h2>
-        <div></div>
-        <button type="button">교체</button>
+        <div class="box" id="box"></div>
+        <button type="button" id="changeBtn">교체</button>
 
 
         <hr>
@@ -35,24 +44,110 @@
         <h2>5. 이미지 교체</h2>
 
         <div>
-        <button type="button">이전</button>
-        <img alt="여러가지 사진들" width=150px; src="https://cdn.pixabay.com/photo/2024/09/19/21/07/night-sky-9059825_1280.jpg">
-        <button type="button">다음</button>
+        <button type="button" id="prevBtn">이전</button>
+        <img id="image" alt="여러가지 사진들" width=150px; src="https://cdn.pixabay.com/photo/2024/09/19/21/07/night-sky-9059825_1280.jpg">
+        <button type="button" id="nextBtn">다음</button>
         </div>
 
 
 
          <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script>
+            let array =  [ 
+            "https://cdn.pixabay.com/photo/2024/09/19/21/07/night-sky-9059825_1280.jpg", 
+            "https://cdn.pixabay.com/photo/2025/09/12/16/42/dog-9830813_640.jpg", 
+            "https://cdn.pixabay.com/photo/2024/08/30/10/14/cat-9009011_640.jpg"
+            ];
+
+            let count = 0;
+
+            $("#prevBtn").on("click",function(){
+                
+                if(count > 0 ){
+                    count--;
+                    $("#image").attr("src",array[count]);
+                    
+                    console.log(count);
+
+                }else if(count <= 0){
+                    count = 2;
+                    $("#image").attr("src",array[count]);
+                    console.log(count);
+                }
+                    
+                
+                
+            });
+
+            $("#nextBtn").on("click",function(){
+                
+                if(count < array.length-1 ){
+                    count++;
+                    $("#image").attr("src",array[count]);
+                    console.log(count);
+                    
+                }else{
+                    count = 0;
+                    $("#image").attr("src",array[count]);
+                    console.log(count);
+                }
+                
+                
+            });
+
+            $("#changeBtn").on("click",function(){
+                if($("#box").hasClass("box")){
+                    $("#box").removeClass("box");
+                    $("#box").addClass("box2");
+                }else{
+                    $("#box").removeClass("box2");
+                    $("#box").addClass("box");
+                }
+            });
+
+
+            $("#spread").on("click", function(){
+               if($("#space").is(":visible")){
+                $("#space").hide();
+                $("#spread").text("펼치기");
+               }else{
+                $("#space").show();
+                $("#spread").text("닫기");
+               }
+            });
+
+            $("#searchBtn").on("click",function(){
+                let source = $("#searchInput").val();
+                let bannedWords = ["십장생", "시베리아", "조카신발", "쌍쌍바", "십원짜리"];
+
+                for(let string of bannedWords){
+
+                    if(source.includes(string)){
+                        alert("금칙어가 포함되어 있습니다. 검색할 수 없습니다.");
+                    }
+                }
+
+                
+                
+            });
+
+            
 
 
             $("#confirmBtn").on("click",function(){
                 let main = $("#main-password").val();
                 let confirm = $("#confirm-password").val();
+                console.log(main);
+                console.log(confirm);
 
-                if(main == null){
-                    alert("비밀번호를 입력해주세요")
+                if(main == ""){
+                    alert("비밀번호를 입력해주세요");
+                }else if(main == confirm){
+                    alert("확인 완료");
+                }else{
+                    alert("비밀번호가 일치하지 않습니다");
                 }
+                      
             });
         </script>
     </body>
