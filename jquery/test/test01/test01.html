@@ -60,7 +60,7 @@
             ];
 
             let count = 0;
-
+            // 5번문제 이전 버튼
             $("#prevBtn").on("click",function(){
                 
                 if(count > 0 ){
@@ -74,11 +74,10 @@
                     $("#image").attr("src",array[count]);
                     console.log(count);
                 }
-                    
-                
-                
+                      
             });
 
+            //5번문제 다음버튼
             $("#nextBtn").on("click",function(){
                 
                 if(count < array.length-1 ){
@@ -92,9 +91,9 @@
                     console.log(count);
                 }
                 
-                
             });
 
+            //4번문제 box 바꾸기
             $("#changeBtn").on("click",function(){
                 if($("#box").hasClass("box")){
                     $("#box").removeClass("box");
@@ -105,7 +104,7 @@
                 }
             });
 
-
+            //3번문제 펼치기 닫기
             $("#spread").on("click", function(){
                if($("#space").is(":visible")){
                 $("#space").hide();
@@ -116,6 +115,7 @@
                }
             });
 
+            //2번문제 금기어
             $("#searchBtn").on("click",function(){
                 let source = $("#searchInput").val();
                 let bannedWords = ["십장생", "시베리아", "조카신발", "쌍쌍바", "십원짜리"];
@@ -126,14 +126,9 @@
                         alert("금칙어가 포함되어 있습니다. 검색할 수 없습니다.");
                     }
                 }
-
-                
-                
             });
 
-            
-
-
+            //1번문제 비밀번호 입력
             $("#confirmBtn").on("click",function(){
                 let main = $("#main-password").val();
                 let confirm = $("#confirm-password").val();
