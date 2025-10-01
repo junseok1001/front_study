@@ -21,23 +21,24 @@
 
         <h2>2. 입력 바꾸기</h2>
 
-        <label>학생<input type="radio" name="person" checked></label>
-        <label>직장인<input type="radio" name="person"></label><br>
+        <label>학생<input type="radio" name="person" value="student" checked></label>
+        <label>직장인<input type="radio" name="person" value="employee"></label><br>
         <label id="stay">학교명</label><input type="text">
 
         <hr>
 
         <h2>3.전체 선택</h2>
         
-        <label>전체선택<input type="checkbox"></label> <br>
-        <label>개인정보 활용 동의<input type="checkbox"></label>
-        <label>서비스 이용 동의<input type="checkbox"></label>
-        <label>마케팅 활용 동의<input type="checkbox"></label>
+        <label>전체선택<input type="checkbox" name="check" id="allCheck" ></label> <br>
+        <label>개인정보 활용 동의<input type="checkbox" name="check" ></label>
+        <label>서비스 이용 동의<input type="checkbox" name="check" ></label>
+        <label>마케팅 활용 동의<input type="checkbox" name="check" ></label>
 
         <hr>
 
         <h2>4. 길이 제한</h2>
-        <input type="text">
+        <input type="text" id="textBox"><label id="text"></label>
+        
 
         
         
@@ -45,9 +46,35 @@
 
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script>
+            //4번문제
+            $("#textBox").on("keypress",function(){
+                let string = $("#textBox").val();
+
+                if(string.length <= 5){
+                    $("#text").text(string);
+                }else{
+                    alert("다섯자를 초과하여 입력할수 없습니다." + string.substring(0,5));
+                    $("#text").text(string.substring(0,5));
+                }
+                
+            });
+            //3번문제
+            $("#allCheck").on("change",function(){
+                let checkedOn = $("input[name=check]").prop("checked");
+                console.log($("input[name=check]").prop("checked"));
+                if(checkedOn){
+                    $("input[name=check]").prop("checked",true);    
+                }else{
+                    $("input[name=check]").prop("checked",false);
+                }
+
+                
+                
+            });
+            //2번문제
             $("input[name=person]").on("change",function(){
                 //학생을 눌렀을때
-                if($().prop("checked",true)){
+                if($(this).val() == "student"){
                     $("#stay").text("학교명");
                 }else{
                     //직장인을 눌렀을때
