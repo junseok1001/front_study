@@ -128,6 +128,14 @@
         // 출력 예시
 
         // 나미
+        for(let memberInfo of membersList){
+            let month = memberInfo.birth.substring(4,6);
+            
+            if(month == 7){
+                console.log(memberInfo.name);
+            }
+            
+        }
     </script>
 
 </body>
