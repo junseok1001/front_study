@@ -1,0 +1,28 @@
+#wrap{
+    width:1200px;
+    margin : 0 auto;
+}
+
+
+header > .title{
+    height:80px;
+    width:1200px;
+    font-size:35px;
+    font-weight:700px;
+    color: white;
+    background-color:rgb(52, 58, 64);
+}
+
+
+
+
+
+
+
+
+
+.copyright{
+    height:100px;
+    color:gray;
+    background-color:rgb(248,249,250);
+}

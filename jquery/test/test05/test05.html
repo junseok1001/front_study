@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>종합문제 </title>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="wrap" ></div>
+        <header class="hedaer display-4 text-danger"><span class="font-weight-bold">111</span>번가</header>
+        <hr>
+            <section class="main-content ">
+                <h2>가입정보 입력</h2>
+                <div class="coment mt-3">111번가의 다양한 혜택을 누려보세요!!</div>
+                <div class="id mt-3">
+                    <div class="flex-column">아이디</div>
+                    <div><input type="text" class="id-text w-100 form-control"></div>
+                    <div class="warning "></div>
+                </div>
+                <div class="password mt-4">
+                    <div class="flex-column">비밀번호</div>
+                    <div><input type="password" class="password-text w-100 form-control"></div>
+                </div>
+                <div class="password-confirm mt-3">
+                    <div class="flex-column">비밀번호 확인</div>
+                    <div><input type="password" class="password-text-confirm w-100 form-control"></div>
+                </div>
+                <div class="name mt-3">
+                    <div class="flex-column">이름</div>
+                    <div><input type="text" class="name-text w-100 form-control"></div>
+                </div>
+                <div class="e-mail mt-3">
+                    <div class=" flex-column">이메일</div>
+                    <div class="d-flex">
+                        <input type="text" class="e-mail-info w-50 form-control">@
+                        <select class="select-option form-control w-50">
+                            <option value="naver.com">naver.com</option>
+                            <option value="gmail.com">gmail.com</option>
+                            <option value="daum.net">daum.net</option>
+                        </select>
+                    </div>
+                    <div class="join-button mt-3">
+                        <button type="button" class="join form-control text-center bg-danger">가입하기</button>
+                    </div>
+                </div>
+            </section>
+            <hr>
+            <footer>
+                <div class="d-flex justify-content-center align-items-center">
+                <div class="copyright">Copyright 2021. 111st All rights reserved.</div>
+                </div>
+            </footer>
+        </div>
+        
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script>
+
+            $(".id-text").on("input",function(){
+                let text = $(this).val();
+                console.log(text.length);
+                if(text.length < 4 ){
+                    $(".warning").show();
+                    $(".warning").text("아이디를 4자 이상 입력하세요.")        
+                    $(".warning").css("font-primary",true);
+                }else{
+                    $(".warning").hide();
+                }
+            
+            });
+
+            $(".join").on("click",function(){
+                
+                let id = $(".id-text").val();
+                let password = $(".password-text").val();
+                let password_confirm = $(".password-text-confirm").val();
+                let name = $(".name-text").val();
+                let e_mail = $(".e-mail-info").val();
+                let full_e_mail = $(".e-mail-info").val() + "@" +  $(".select-option").val();
+                
+                if(id=="" || password=="" || name=="" || e_mail==""){
+                        if(id==""){
+                            alert("아이디를 입력하세요")
+                        }
+
+                        if(password==""){
+                            alert("비밀번호를 입력하세요")
+                        }else if(password != password){
+                            alert("비밀번호가 일치하지 않습니다.")
+                        }
+
+                        if(name==""){
+                            alert("이름를 입력하세요")
+                        }
+
+                        if(e_mail==""){
+                            alert("이메일를 입력하세요")
+                        }
+
+                }else{
+                    alert("아이디 : " + id +"\n" + "비밀번호 : " + password + "\n" + 
+                    "이메일 : " + full_e_mail +"\n" + "가입이 완료되었습니다."
+                    );
+                }
+                
+            });
+
+        </script>
+    </body>
+</html>

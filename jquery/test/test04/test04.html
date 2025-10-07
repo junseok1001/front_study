@@ -5,27 +5,45 @@
         <meta charset="utf-8">
         <title>JQuery 외부라이브러리 연동</title>
         
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        
         <link rel="stylesheet" href="prism.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
         
         
     </head>
     <body>
-        <div class=>
-        <h2>코드</h2>
-        <div class=>
-<script type="text/plain" class="language-html">
-    <div class="depth_1">
-        <ul class="depth_2">
-            <li class="depth_3"></li>
-            <li class="depth_3"></li>
-            <li class="depth_3"></li>
-        </ul>
-    </div>
-</script>
+        
+        <div id="wrap" class="p-1">
+            <header class="d-flex">
+                <div class="title d-flex justify-content-start align-items-center">
+                    <div class="logo ml-2 mb-2"> Marondal</div>
+                </div>
+            </header>
+            <section class="main-contents ">
+            <div class="content p-4">
+                <h2>예제 보기</h2>
+                    <div class = "code">
+                        <script type="text/plain" class="language-java">
+ package ex01;
+
+ public class Ex01{
+
+        public static void main(String[] args){
+            System.out.println("Hello World!");
+        }
+ }
+                        </script>
+                    </div>
+            </div>
+            </section>
+            <footer class="copyright d-flex">
+                <div class="d-flex align-items-center align-items-center" >
+                    <div>Copyright 2021. 닉네임 All rights reserved.</div>
+                </div>
+            </footer>
         </div>
-    </div>
+    
 
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="prism.js"></script>
