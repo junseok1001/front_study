@@ -1,0 +1,54 @@
+#wrap{
+    width:1200px;
+    margin: 0 auto;
+}
+
+
+header{
+    height:100px;
+}
+
+
+.menu{
+    height:50px;
+    background-color:rgb(209,106,30);
+}
+
+.nav-item{
+    font-size:25px;
+}
+
+
+
+.content > .main-image{
+    height:500px;
+    
+}
+
+.content > .main-content{
+    height:250px;
+}
+
+.main-content > .live{
+    font-size:45px;
+    color:white;
+    background-color:brown;
+}
+
+.main-content > .login{
+    background-color:rgb(209,106,30);
+}
+
+.main-content > .inquiry{
+    font-size:35px;
+    color:white;
+    background-color:brown;
+}
+
+
+
+
+.copyright{
+    height:100px;
+    color:gray;
+}

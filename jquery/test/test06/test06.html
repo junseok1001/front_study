@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>통나무 팬션</title>
+
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="wrap">
+            <header class="display-3 text-center p-1">통나무 팬션</header>
+            <nav class="menu">
+                <ul class="nav nav-fill">
+                    <li class="nav-item"><a class="nav-link text-white" href="#">펜션소개</a></llink></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">객실보기</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">예약안내</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">커뮤니티</a></li>
+                </ul>
+            </nav>
+            <section class="content">
+                <div class="main-image">
+                    <img class="content-image w-100" alt="통나무 팬션 소개 이미지" src="http://marondal.com/material/images/dulumary/web/front/jquery/test06_banner1.jpg">
+                </div>
+                <div class="main-content d-flex">
+                    <div class="live d-flex justify-content-center align-items-center col-4"> 실시간<br> 예약하기</div>
+                    <div class="login col-5">
+                        <div class="d-flex justify-content-start align-items-end m-3">
+                            <h2 >예약 확인</h2>
+                            <div class="ml-3">
+                            <label>회원<input type="radio" name="member" value="member" checked></label>
+                            <label class="ml-3">비회원<input type="radio" value="bemember" name="member"></label>
+                            </div>
+                        </div>
+                        <div class="login-member">
+                            <div>
+                                <labe class="d-flex justify-content-center align-items-center " >아이디 : <input type="text" class="ml-3 col-6 form-control "></labe> 
+                                <labe class="d-flex justify-content-center align-items-center mt-3" >비밀번호 : <input type="password" class=" ml-3 col-6 form-control "></labe>    
+                            </div>
+                        </div>
+
+                        <div class="login-bemember">
+                            <div>
+                                <labe class="d-flex justify-content-center align-items-center  " >아이디 <input type="text" class="ml-3 col-6 form-control "></labe> 
+                                <labe class="d-flex justify-content-center align-items-center mt-3" >전화번호 <input type="text" class="phone-number ml-3 col-6 form-control "></labe>    
+                                <labe class="d-flex justify-content-center align-items-center mt-3 " >날짜 <input type="text" id="date" class="ml-3 col-6 form-control "></labe> 
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="inquiry d-flex justify-content-center align-items-center font-weight-bold col-3"> 예약문의 : <br>010 <br>-000-1111</div>
+                </div>
+            </section>
+            <footer class="copyright p-1">
+                <div class="mt-2 ml-4">
+                    제주특별자치도 제주시 애월읍 <br>
+                    사업자등록번호 : 111-22-255222 / 농어촌민박사업자지정.대표:기동욱 <br>
+                    Copyright 2025 tongnamu All right reserved
+                </div>
+            </footer>
+        </div>
+
+
+
+
+        
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+        <script>
+
+            $(".phone-number").on("change",function(){
+                let string = $(this).val();
+                console.log(string.substring(0,3));
+                if(string.substring(0,3) != "010"){
+                    alert("전화번호는 010부터 시작해야합니다.");
+                }else{
+
+                }
+            });
+
+            if($("input[name=member]").prop("checked"),true){
+                    $(".login-bemember").hide();
+                }
+
+            $("input[name=member]").on("change",function(){
+                
+                
+                if($(this).val()== "member"){
+                    $(".login-member").show();
+                    $(".login-bemember").hide();
+                }
+
+                if($(this).val()== "bemember"){
+                    $(".login-member").hide();
+                    $(".login-bemember").show();
+                }
+            });
+
+            $("#date").datepicker({
+                minDate:0,
+                dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+                dateFormat:"yy-mm-dd"
+            })
+                
+
+            
+
+            var array = [
+                "http://marondal.com/material/images/dulumary/web/front/jquery/test06_banner1.jpg",
+                "http://marondal.com/material/images/dulumary/web/front/jquery/test06_banner2.jpg",
+                "http://marondal.com/material/images/dulumary/web/front/jquery/test06_banner3.jpg",
+                "http://marondal.com/material/images/dulumary/web/front/jquery/test06_banner4.jpg"
+            ]
+
+            var count=0;
+
+            setInterval(function(){
+                if(count == 4){
+                    count=0;
+                }
+                $(".content-image").attr("src",array[count]);
+                count++;
+
+            },3000);
+            
+
+        </script>
+    </body>
+</html>
