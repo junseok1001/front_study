@@ -12,7 +12,8 @@
         <div id="wrap" ></div>
         <header class="hedaer display-4 text-danger"><span class="font-weight-bold">111</span>번가</header>
         <hr>
-            <section class="main-content ">
+            <section class="d-flex justify-content-center">
+            <div class="main-content my-2">
                 <h2>가입정보 입력</h2>
                 <div class="coment mt-3">111번가의 다양한 혜택을 누려보세요!!</div>
                 <div class="id mt-3">
@@ -34,18 +35,22 @@
                 </div>
                 <div class="e-mail mt-3">
                     <div class=" flex-column">이메일</div>
-                    <div class="d-flex">
-                        <input type="text" class="e-mail-info w-50 form-control">@
+                    <div class="d-flex align-items-center">
+                        <input type="text" class="e-mail-info w-50 form-control">
+                        <div class="mx-1">@</div>
                         <select class="select-option form-control w-50">
                             <option value="naver.com">naver.com</option>
                             <option value="gmail.com">gmail.com</option>
                             <option value="daum.net">daum.net</option>
+                            <option value="custom">직접입력</option>
                         </select>
+                        <input type="text" id="customInput" class="form-control d-none">
                     </div>
                     <div class="join-button mt-3">
-                        <button type="button" class="join form-control text-center bg-danger">가입하기</button>
+                        <button type="button" class="join form-control text-center btn-danger">가입하기</button>
                     </div>
                 </div>
+            </div>
             </section>
             <hr>
             <footer>
@@ -61,7 +66,6 @@
 
             $(".id-text").on("input",function(){
                 let text = $(this).val();
-                console.log(text.length);
                 if(text.length < 4 ){
                     $(".warning").show();
                     $(".warning").text("아이디를 4자 이상 입력하세요.")        
@@ -72,6 +76,17 @@
             
             });
 
+            $(".select-option").on("change",function(){
+                let domain = $(this).val();
+                
+                console.log(domain);
+                if(domain == "custom"){
+                    $(this).addClass("d-none");
+                    $("#customInput").removeClass("d-none");
+                    
+                }
+            });
+
             $(".join").on("click",function(){
                 
                 let id = $(".id-text").val();
@@ -79,35 +94,77 @@
                 let password_confirm = $(".password-text-confirm").val();
                 let name = $(".name-text").val();
                 let e_mail = $(".e-mail-info").val();
-                let full_e_mail = $(".e-mail-info").val() + "@" +  $(".select-option").val();
+                let domainEmail = $(".select-option").val();
                 
-                if(id=="" || password=="" || name=="" || e_mail==""){
-                        if(id==""){
-                            alert("아이디를 입력하세요")
-                        }
-
-                        if(password == ""){
-                            alert("비밀번호를 입력하세요.")
-                        }
-
-                        if(name==""){
-                            alert("이름를 입력하세요")
-                        }
-
-                        if(e_mail==""){
-                            alert("이메일를 입력하세요")
-                        }
-
-                }else{
-                    if(password != password_confirm){
-                            alert("비밀번호가 일치하지 않습니다.")
-                    }else{
-                        alert("아이디 : " + id +"\n" +  
-                    "이메일 : " + full_e_mail +"\n" + "가입이 완료되었습니다."
-                    );
-                    }
-                    
+                if(domainEmail == "custom"){
+                    domainEmail = $("#customInput").val();
                 }
+
+                //유효성 검사 (validation)
+                if(id==""){
+                    alert("아이디를 입력하세요");
+                    return ;
+                }
+
+                if(password==""){
+                    alert("비밀번호를 입력하세요");
+                    return ;
+                }
+
+                if(name==""){
+                    alert("이름을 입력하세요");
+                    return ;
+                }
+
+                if(e_mail==""){
+                    alert("이메일을 입력하세요");
+                    return ;
+                }
+
+                if(password != password_confirm){
+                    alert("비밀번호가 일치하지 않습니다.");
+                    return;
+                }
+
+                if(domainEmail == ""){
+                    alert("도메인이 입력되지 않았습니다.")
+                    return;
+                }
+
+                    alert("아이디 : " + id +"\n" +  
+                    "이메일 : " + e_mail + "@" + domainEmail +"\n" + "가입이 완료되었습니다."
+                    );
+                // if(id=="" || password=="" || name=="" || e_mail==""){
+                //         if(id==""){
+                //             alert("아이디를 입력하세요")
+                //             return;
+                //         }
+
+                //         if(password == ""){
+                //             alert("비밀번호를 입력하세요.")
+                //             return;
+                //         }
+
+                //         if(name==""){
+                //             alert("이름를 입력하세요")
+                //             return;
+                //         }
+
+                //         if(e_mail==""){
+                //             alert("이메일를 입력하세요")
+                //             return;
+                //         }
+
+                // }else{
+                //     if(password != password_confirm){
+                //             alert("비밀번호가 일치하지 않습니다.")
+                //     }else{
+                //         alert("아이디 : " + id +"\n" +  
+                //     "이메일 : " + full_e_mail +"\n" + "가입이 완료되었습니다."
+                //     );
+                //     }
+                    
+                // }
                 
             });
 
